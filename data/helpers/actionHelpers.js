@@ -8,6 +8,10 @@ module.exports = {
     addAction: action => {
         return db.insert(action)
                  .into('action');
-    }
+    },
 
+    getActionsByProject: id => {
+        return db('action')
+                 .where('project_id', id);
+    }
 }
